@@ -1,0 +1,26 @@
+private static void Main(string[] args)
+    {
+        int number;
+        int sumResult = 0;
+        int minRandomNumberRage = 1;
+        int maxRandomNumberRage = 27;
+        int minThreeDigitNumber = 100;
+        int maxThreeDigitNumber = 1000;
+        int startNumber = 0;
+
+        Random random = new Random();
+
+        number = random.Next(minRandomNumberRage, maxRandomNumberRage + 1);
+        Console.WriteLine($"Случайное сгенерированное числ: {number}.");
+
+        for (int i = startNumber; i <= maxThreeDigitNumber; i += number)
+        {
+            if (i >= minThreeDigitNumber)
+            {
+                sumResult++;
+            }
+        }
+
+        Console.WriteLine($"Сумма чисел кратных {number} = {sumResult}.");
+        Console.ReadKey();
+    }
